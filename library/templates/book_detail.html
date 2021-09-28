@@ -1,0 +1,21 @@
+{% extends 'deneme2.html' %}
+{% load static %}
+
+{% block title %}
+{{ book.title }}
+{% endblock %}
+
+{% block content %}
+{{ block.super }}
+<div style="margin:0 auto;width:1200px;">
+    <h1 class="page-header" style="color:black;">{{ book.title }}</h1>
+
+    <h2> Bu kitap alım için <b>{{ book.availability }}</b></h2>
+    <br>
+    <h3><b>Kitabın Yazarı = </b>{{ book.author }}</h3>
+    <br>
+    <h3><b>Basım Yılı = </b>{{ book.year }}</h3>
+    <br>
+    <h3><b>Kategori = </b>{{ book.category }}</h3>
+</div>
+{% endblock %}

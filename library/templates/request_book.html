@@ -1,0 +1,57 @@
+{% extends 'deneme2.html' %}
+{% load static %}
+
+{% block title %}
+    Request a Book
+{% endblock %}
+
+{% block content %}
+<div class="col-lg-6 col-lg-offset-3 col-md-6 col-m-offset-3 col-sm-6 col-sm-offset-3">
+    <h1 class="page-header">MCBÜ Kitap Talebi</h1>
+    <h3>İstediğin kitap yok mu? Getirmemiz için bize öner!</h3>
+    <h5>Doğru kitabın gelmesinden emin olmak için lütfen tüm bilgileri eksiksiz giriniz.</h5>
+    <br>
+    <form action="{% url 'request_book' %}" method="post">
+        {% csrf_token %}
+        {% for field in form %}
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-lg-2">
+                        <label class="control-label"> {{ field.label }}
+
+                        </label>
+                    </div>
+                    <div class="col-lg-6">
+                        {{ field }}
+                        {% if field.help_text %}
+                            <span class="text-success"><b>{{ field.help_text }}</b></span>
+                        {% endif %}
+
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    <div class="form-group">
+        <input type="submit" value="Talep Et" class="btn btn-sm btn-success">
+    </form>
+    <div style="padding: 10px 15px;">
+            <div style="background-color: white;padding: 10px 15px; width:75px;border: 2px solid black;text-align:center;">
+                <a  style="color:black; font-size:19px;" href="{% url 'book' %}"><b>İptal</b></a>
+            </div>
+        </div>
+</div>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

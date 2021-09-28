@@ -1,0 +1,41 @@
+{% extends 'deneme2.html' %}
+{% load static %}
+
+{% block title %}
+    Öğrenci Girişi
+{% endblock %}
+
+{% block content %}
+    <div class="col-lg-6 col-lg-offset-3 col-md-6 col-m-offset-3 col-sm-6 col-sm-offset-3">
+        <h1 class="page-header">MCBÜ Kütüphane Öğrenci Girişi</h1>
+        {% if forms.non_field_errors %}
+            {% for error in forms.non_field_errors %}
+                <span class="text-danger"><b>{{ error }}</b></span>
+            {% endfor %}
+        {% endif %}
+        <form method="post" action="{% url 'studentpage' %}">
+            {% csrf_token %}
+            {% for field in form %}
+            <div class="form-group">
+                    <div class="row">
+                <div class="col-lg-2 col-md-2">
+                    <label for="{{ field.id_for_label }}" class="control-label"> {{ field.label }}</label>
+                </div>
+                    <div class="col-lg-10 col-md-10">
+                    {{ field }}
+                        {% if field.errors %}
+                            {% for error in field.errors %}
+                                <span class="text-danger">{{ error }}</span>
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+
+        </div>
+        </div>
+            {% endfor %}
+            <input type="submit" class="btn btn-sm btn-success">
+        </form>
+    </div>
+
+
+{% endblock %}

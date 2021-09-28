@@ -1,0 +1,22 @@
+{% extends 'deneme2.html' %}
+{% load static %}
+
+{% block title %}
+    {{ mes_det.title }}
+{% endblock %}
+
+{% block content %}
+    <div style="margin:0 auto;width:1200px;">
+        <h1 class="page-header" style="color:black;"><b>Konu = </b>{{ mes_det.title }}</h1>
+
+        <h2><b>Mesajın Nedeni = </b>{{ mes_det.reason }}</h2>
+        <br>
+        <h3><b>Mesaj İçeriği = </b>{{ mes_det.content }}</h3>
+        <br>
+        <h3><b>Gönderen Adı-Soyadı = </b>{{ mes_det.student_name }} {{ mes_det.student_surname }}</h3>
+        <br>
+        <h3><b>Öğrenci No = </b>{{ mes_det.student_no }}</h3>
+        <br>
+        <h3><b>Gönderen İletişim = </b>{{ mes_det.student_contact }}</h3>
+    </div>
+{% endblock %}

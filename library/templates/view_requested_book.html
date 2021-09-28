@@ -1,0 +1,44 @@
+{% extends 'deneme2.html' %}
+{% load static %}
+
+{% block title %}
+    Requested Books
+{% endblock %}
+{% block ust_icerik %}
+
+{% endblock %}
+
+{% block content %}
+     {{ block.super }}
+<div style="background-color:#660000;">
+    <div>
+        <h1 style="color:white; text-align:center; height:50px;font-size:45px;"><b>MCBÜ KÜTÜPHANE</b></h1>
+    </div>
+</div>
+<div style="background-color:#bfbfbf;height:55px;">
+    <a style="color:black; font-size:35px;margin-left:500px;" href="{% url 'adminpage' %}"><b> | Geri Dön |</b></a>
+</div>
+<div class="col-lg-6 col-lg-offset-3 col-md-6 col-m-offset-3 col-sm-6 col-sm-offset-3">
+    <h1 class="page-header" style="text-align:center;">ÖNERİLEN KİTAP LİSTESİ</h1>
+    {% for i in req_book %}
+    <div style="margin:0 auto;width:1000px;background-color:#EEEEEE;border:outset;border-color:#660000;border-width:thick">
+        <ul>
+
+            <li><h4>{{ i.title }}</h4>
+                <h4>{{ i.author }}</h4>
+                <h4>{{ i.year }}</h4>
+                <h5><a class="btn btn-sm btn-danger" style="color:white;" href="{% url 'req_book_deletion' i.pk %}"><b>Sil</b></a></h5>
+
+
+
+            </li>
+
+
+        </ul>
+        </div>
+    {% endfor %}
+</div>
+
+
+{% endblock %}
+

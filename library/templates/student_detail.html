@@ -1,0 +1,26 @@
+{% extends 'deneme2.html' %}
+{% load static %}
+
+{% block title %}
+    {{ stud_list.student_name }}
+{% endblock %}
+
+{% block content %}
+    <div style="margin:0 auto;width:1200px;">
+        <h1 class="page-header" style="color:black;"><b>{{ student.student_name }} {{ student.student_surname }} Öğrenci Bilgileri</b></h1>
+        <h3><b>Öğrenci Numarası = </b>{{ student.student_no }}</h3>
+        <br>
+        <h3><b>Öğrenci Telefon No = </b>{{ student.student_contact }}</h3>
+        <br>
+        <h3><b>Öğrenci Email = </b>{{ student.student_email }}</h3>
+        <br>
+        <h3><b>Öğrenci TC = </b>{{ student.student_tc }}</h3>
+        <br>
+        <h3><b>Öğrenci Cinsiyet = </b>{{ student.student_gender }}</h3>
+        <br>
+        <h3><b>Öğrenci Bölüm = </b>{{ student.student_branch }}</h3>
+
+
+
+    </div>
+{% endblock %}

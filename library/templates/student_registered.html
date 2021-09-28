@@ -1,0 +1,35 @@
+{% extends 'deneme2.html' %}
+{% load static %}
+
+{% block title %}
+    Öğrenci Kaydedildi
+{% endblock %}
+
+{% block content %}
+     {{ block.super }}
+<div style="background-color:#660000;">
+    <div>
+        <h1 style="color:white; text-align:center; height:50px;font-size:45px;"><b>MCBÜ KÜTÜPHANE</b></h1>
+    </div>
+</div>
+<div style="margin:0 auto;width:1200px;">
+<h1 class="page-header" style="color:black;">Öğrenci Kaydı Başarıyla Gerçekleştirildi</h1>
+<div style="padding: 100px 0px 5px 300px;text-align:center">
+  <div style="background-color:#660000;width:500px;height:100%">
+    <div style="padding:0 0 0 0; border:solid black;">
+      <h1 style="color:white;"><a style="color:white; text-decoration:none;"href="{% url 'student_register' %}"><b>Başka Öğrenci Ekle</b></a></h1>
+    </div>
+  </div>
+</div>
+
+<div style="padding: 0px 0px 5px 300px;text-align:center">
+ <div style="background-color:#660000;width:500px;height:100%">
+    <div style="padding:0 0 0 0; border:solid black;">
+      <h1 style="color:white;"><a style="color:white; text-decoration:none;"href="{% url 'adminbook' %}"><b>Kitapları Görüntüle</b></a></h1>
+    </div>
+  </div>
+</div>
+</div>
+
+
+{% endblock %}
